@@ -2,10 +2,9 @@ import {
   AiFillFacebook,
   AiFillInstagram,
   AiFillTwitterSquare,
-  AiOutlineLogin,
-  AiOutlineLogout,
   AiOutlineSearch,
 } from "react-icons/ai";
+import { GiNewspaper } from "react-icons/gi";
 import { Link, NavLink } from "react-router-dom";
 import { getCurrentDateTime } from "..//../utility/currentDateTime";
 import { useEffect } from "react";
@@ -83,9 +82,6 @@ const Headers = () => {
               <div className="mt-5">
                 <p className="font-semibold">{currentDateTime}</p>
                 <p className="font-semibold ">EPAPER TODAY’S PAPER</p>
-                {/* <Link to="/home">
-                  <button className="btn bg-textColor text-[14px]">Home</button>
-                </Link> */}
               </div>
             </div>
 
@@ -106,13 +102,15 @@ const Headers = () => {
                 </ul>
               </div>
               <div className="flex flex-col items-center">
-                <img
-                  className="mt-3"
-                  src="https://indianexpress.com/wp-content/themes/indianexpress/images/indian-express-logo-n.svg"
-                  alt="img"
-                />
+                <h1 className="mt-3 text-black text-[40px] leading-7 font-[500] flex">
+                  <span className="text-red-600">
+                    <GiNewspaper />
+                  </span>
+                  <span className="italic mx-3">Smart News </span> <span className="font-[800]">SURVEILLANCE</span>
+                </h1>
+
                 <h3 className="mt-3 text-textColor text-[20px] leading-7 font-[500]">
-                  JOURNALISM OF COURAGE
+                The Era of Digital Oversight
                 </h3>
               </div>
             </div>
@@ -137,17 +135,19 @@ const Headers = () => {
       </section>
       <section className="p-0">
         <div className="border border-solid border-t-0 p-3 flex justify-between items-center">
-          <div >
+          <div>
             <ul className="flex gap-3 font-bold ">
               {navLinks.map((item, index) => (
-                <li key={index} className="hover:text-primaryColor" >
+                <li key={index} className="hover:text-primaryColor">
                   <NavLink to={item.path}>{item.display}</NavLink>
                 </li>
               ))}
             </ul>
           </div>
           <div className="gap-3">
+            <Link to='/login'>
             <button className="btn mt-0 bg-headingColor">Login</button>
+            </Link>
           </div>
         </div>
       </section>
