@@ -25,15 +25,10 @@ const newsLinks = [
     await page1.goto(newsLinks[0]);
     await page1.screenshot({ path: './screens/news_1.jpg' });
 
-    const newsTitle1 = await page1.$eval('.t-elecblock-heading a', (title) => title.innerText);
-    const newsContent = await page1.$eval('.t-elecblock-right p', (content) => content.innerText);
-
-    newsData.push({
-        title: newsTitle1,
-        content: newsContent,
-    });
-
+    const newsTitle1 = await page1.$eval('.top-news > ul ', (title) => title.innerText);
+    const newsContent = await page1.$eval('.top-news > ul > li ', (content) => content.href);
     await page1.close();
+    console.log({ newsTitle1, newsContent });
 
     // Fetch data from the second link
     const page2 = await browser.newPage();
@@ -50,8 +45,8 @@ const newsLinks = [
     const newsContent3 = await page2.$eval('.storyDetails', (content) => content.innerText);
 
     newsData.push({
-        title: newsTitle2,
-        content: newsContent2 + newsContent3,
+        title: newsTitle2 + newsTitle1,
+        content: newsContent2 + newsContent3 + newsContent,
         url: newsLinks[1],
     });
 
@@ -61,11 +56,13 @@ const newsLinks = [
 
     const timestamp = new Date().getTime();
     const fileName = `./data/news_${timestamp}.json`;
-
-    await writeFile(fileName, JSON.stringify(newsData, null, 2), 'utf-8', (err) => {
+ setTimeout(()=>{
+     writeFile(fileName, JSON.stringify(newsData, null, 2), 'utf-8', (err) => {
         if (err) throw err;
         console.log(`Saved the news data to ${fileName}`);
     });
+ },1000);
+   
 
     await browser.close();
 })();
