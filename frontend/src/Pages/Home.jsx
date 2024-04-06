@@ -1,7 +1,7 @@
 import React from "react";
 import PieChart from "../components/PieChart/PieChart";
 import { useState } from "react";
-import NewsCategory from "../components/NewsCategory/NewsCategory";
+
 
 const Home = () => {
   const [selectedDepartment, setSelectedDepartment] = useState("All");
@@ -56,7 +56,7 @@ const Home = () => {
               <div className="card-text">
                 <a
                   target="_blank"
-                  href="https://www.hindustantimes.com/india-news/government-launches-study-in-india-portal-to-establish-india-as-global-education-hub-101691069616859.html"
+                  href="https://economictimes.indiatimes.com/tech/technology/apple-reverses-decision-to-disable-home-screen-web-apps-in-eu/articleshow/108155600.cms"
                 >
                   <div className="flex">
                     <img
@@ -68,7 +68,7 @@ const Home = () => {
                     />
                     <div className="media-body">
                       <h4 className="text-[24px] font-bold hover:text-primaryColor">
-                        Government Launches New Education Program
+                      हवाईअड्डों पर व्हीलचेयर से चलने वाले यात्रियों के लिए एसओपी तैयार करने के लिए अधिकारियों से कहेंगे: सुप्रीम कोर्ट
                       </h4>
                       <p className="font-semibold">
                         Published in: Hindustan Times
@@ -79,19 +79,19 @@ const Home = () => {
                 </a>
               </div>
 
-              <div className="card-text mt-5">
+              <div className="card-text mt-5">  
                 <div className="flex">
                   <img
-                    src="https://ddnews.gov.in/sites/default/files/d_13.jpg"
+                    src="https://economictimes.indiatimes.com/thumb/msid-108155600,width-100,height-75,resizemode-4/tech/technology/apple-reverses-decision-to-disable-home-screen-web-apps-in-eu.jpg"
                     height="150px"
                     width="160px"
                     className="mr-3"
                     alt="..."
                   />
-                  <a href="https://www.hindustantimes.com/ht-insight/public-health/prioritising-employee-mental-health-post-covid-the-key-to-a-resilient-workforce-101690264614997.html">
+                  <a href="https://economictimes.indiatimes.com/tech/technology/apple-reverses-decision-to-disable-home-screen-web-apps-in-eu/articleshow/108155600.cms">
                     <div className="media-body">
                       <h4 className="text-[24px] font-bold hover:text-primaryColor">
-                        Healthcare Initiative Receives Positive Feedback
+                      National Handicapped Finance And Development Corporation
                       </h4>
                       <p className="font-semibold">
                         Published in: Hindustan Times
@@ -104,22 +104,21 @@ const Home = () => {
               <div className="card-text mt-5">
                 <div className="flex">
                   <img
-                    src="https://images.indianexpress.com/2023/02/G20.jpg?w=640"
+                    src="https://economictimes.indiatimes.com/thumb/msid-108018575,width-100,height-75,resizemode-4/industry/transportation/airlines-/-aviation/will-ask-authorities-to-frame-sop-for-wheelchair-bound-passengers-at-airports-sc.jpg"
                     height="150px"
                     width="160px"
                     className="mr-3"
                     alt="..."
                   />
-                  <a href="https://indianexpress.com/article/business/budget/union-budget-2023-rs-990-crore-allocated-for-g20-presidency-8418567/">
+                  <a href="https://www.nhfdc.nic.in/">
                     <div className="media-body">
                       <h4 className="text-[24px] font-bold hover:text-primaryColor">
-                        Union Budget 2023: Rs 990 crore allocated for G20
-                        presidency
+                      કોવિડ-૧૯ મહામારીના સમયગાળા દરમિયાન અવસાન પામેલ માતા/પિતાના બાળકોને સહાય કરવા બાબત.
                       </h4>
                       <p className="font-semibold">
                         Published in: The Indian Express
                       </p>
-                      <p>Date: September 24, 2023</p>
+                      <p>Date: September 24, 2024</p>
                     </div>
                   </a>
                 </div>
@@ -131,59 +130,7 @@ const Home = () => {
           </div>
         </section>
         <section className="p-0">
-          {/* <NewsCategory/> */}
-          <div>
-          <div className="container mx-auto mt-6">
-      <h1 className="text-4xl font-semibold mb-4">Indian Government News</h1>
-      <div className="mb-4">
-        <span className="mr-2">Filter by Department:</span>
-        {departments.map((department, index) => (
-          <button
-            key={index}
-            className={`${
-              selectedDepartment === department
-                ? "bg-blue-500 text-white"
-                : "bg-gray-300 text-gray-800"
-            } px-3 py-1 rounded-md mr-2 hover:bg-blue-600 transition duration-300 ease-in-out`}
-            onClick={() => setSelectedDepartment(department)}
-          >
-            {department}
-          </button>
-        ))}
-      </div>
-      <div className="mb-4">
-        <span className="mr-2">Filter by Sentiment:</span>
-        {sentiments.map((sentiment, index) => (
-          <button
-            key={index}
-            className={`${
-              selectedSentiment === sentiment
-                ? "bg-green-500 text-white"
-                : "bg-gray-300 text-gray-800"
-            } px-3 py-1 rounded-md mr-2 hover:bg-green-600 transition duration-300 ease-in-out`}
-            onClick={() => setSelectedSentiment(sentiment)}
-          >
-            {sentiment}
-          </button>
-        ))}
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {filteredNews.map((news, index) => (
-          <div
-            key={index}
-            className="bg-white shadow-md rounded-md p-4 hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-2 cursor-pointer"
-          >
-            <h2 className="text-lg font-semibold mb-2">{news.title}</h2>
-            <p className="text-sm text-gray-600">
-              Sentiment: {news.sentiment}
-            </p>
-            <p className="text-sm text-gray-600">Department: {news.department}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-
-          </div>
+        
         </section>
       </div>
     </>
