@@ -3,7 +3,7 @@ const IntroSection = () => {
     <>
       <section className="px-2 grid md:grid-cols-2 md:h-[50vh] h-full">
         <div className="flex flex-col justify-start items-start px-[60px]">
-          <h3 className="font-[700] text-[#f00a0a] my-3 text-[22px]">
+          <h3 className="font-[700] text-primaryColor my-3 text-[22px]">
             What we do ?
           </h3>
           <h1 className="text-[2rem] font-[800] text-[#09092e] ">
@@ -17,7 +17,7 @@ const IntroSection = () => {
           </p>
           <button
             type="button"
-            className="bg-[#f00a0a] rounded-full p-3 my-3 text-white"
+            className="bg-primaryColor rounded-full p-3 my-3 text-white"
           >
             Know More
           </button>

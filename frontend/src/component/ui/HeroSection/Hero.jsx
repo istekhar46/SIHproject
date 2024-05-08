@@ -20,7 +20,7 @@ const Hero = () => {
               <div>
                 <button
                   type="button"
-                  className="bg-[#f00a0a] font-bold text-white m-1 p-4 rounded-full"
+                  className="bg-primaryColor font-bold text-white m-1 p-4 rounded-full"
                 >
                   Donate Now
                 </button>
